@@ -1,0 +1,38 @@
+{
+  "name": "keystone-docker",
+  "version": "1.0.0",
+  "description": "Seting keystone in docker container",
+  "main": "index.js",
+  "scripts": {
+    "start:prod": "node index.js",
+    "start:dev": "npx nodemon index.js --exec babel-node",
+    "test": "test",
+    "make:prod": "rm -rf dist && mkdir dist && npx babel src --out-dir dist"
+  },
+  "author": "Velizar Mihaylov",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^6.1.0",
+    "keystone": "^4.0.0",
+    "mongodb": "^3.1.8"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "babel-plugin-transform-builtin-extend": "^1.1.2",
+    "babel-plugin-transform-export-extensions": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^5.8.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^21.26.2",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "nodemon": "^1.18.6"
+  }
+}

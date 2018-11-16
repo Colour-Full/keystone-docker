@@ -1,0 +1,21 @@
+# Version of docker file
+version: '3'
+
+# Define the services you would like docker compose to build for you
+services:
+# We are using the latest version of mongo but if you need a specific version
+# you can achive that by usin mongo:version.number
+  mongo:
+# Name of the docker image
+    image: mongo
+    restart: always
+# We will create a new database when we intialise the mongo container for first time
+# The name of the data base will be defined with this env
+    environment:
+        - MONGO_INITDB_DATABASE=compose
+# Expose port 2027 to the host
+    ports:
+        - 27027:27017
+    volumes:
+        - ./deployment/data/db:/data/db
+        - ./deployment/dev/create-dev-db.js:/docker-entrypoint-initdb.d/create-dev-db.js
